@@ -1,0 +1,132 @@
+﻿@model Entities.Booking
+
+@{
+    ViewData["Title"] = "Booking Form";
+}
+
+    <div class="panel panel-success">
+        <br />
+        <div class="panel-heading text-center"><h1>Request for a new booking</h1></div>
+        <br />
+        <br />
+        Booking Requests are sent by email, you will receive a response within 24 hours.
+        <br />
+        <br />
+        <form class="panel-body" asp-controller="Bookings" asp-action="Booking" method="post">
+            @*<div class="p-a-1">*@
+            <div asp-validation-summary="All"></div>
+
+            <div class="formfield">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label asp-for="FromDate">From Date</label>
+                        <input class="form-control" asp-for="FromDate" />
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="formfield">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label asp-for="ToDate">To Date</label>
+                        <input class="form-control" asp-for="ToDate" />
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="formfield">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label asp-for="NoPeople">No People</label>
+                        <input class="form-control" style="width:75px;" asp-for="NoPeople" />
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="formfield">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input class="form-control" style="width:200px;" asp-for="Name" />
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="formfield">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label asp-for="Email">Email</label>
+                        <input class="form-control" style="width:300px;" asp-for="Email" />
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="formfield">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label asp-for="Phone">Phone</label>
+                        <input class="form-control" style="width:200px;" asp-for="Phone" />
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="form-group">
+            <label>Confirmed?</label>
+            <select class="form-control" style="width:300px;" asp-for="Confirmed">
+                <option value="">Choose an option</option>
+                <option value="true">Yes, I am ready to confirm this booking</option>
+                <option value="false">No, I am not ready to confirm this booking</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Pay now?</label>
+            <select class="form-control" style="width:300px;"asp-for="Paid">
+                <option value="">Choose an option</option>
+                <option value="true">Yes, I would like to pay online now</option>
+                <option value="false">No, I will pay later</option>
+            </select>
+        </div>
+
+        <br>
+        <br>*@
+
+            <br>
+            <br>
+
+            <a asp-action="Apply">
+                <input type="submit" value="Apply" class="btn btn-danger" style="background-color:green;border-radius:50%; border: 1px solid black;" />
+            </a>
+
+            <br>
+            <br>
+
+            <div>
+                <a asp-action="Home">Home</a>
+            </div>
+
+            <br>
+            <br>
+
+            @*<b>
+            <div class="form-group">
+                <input type="submit" value="Apply" class="btn btn-default" />
+            </div>
+        </b>*@
+
+
+
+        </form>
+    </div>
+
+

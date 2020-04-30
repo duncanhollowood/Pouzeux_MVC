@@ -1,0 +1,80 @@
+﻿@model Entities.Enquiry
+
+@{
+    ViewData["Title"] = "Enquiry";
+}
+
+<br />
+
+<div class="panel panel-success">
+    <div class="panel-heading text-center"><h1>General Enquiry</h1></div>
+    <br />
+    <br />
+    Please submit your query here: you will receive a response within 24 hours.
+    <br />
+    <br />
+    <form class="panel-body" asp-action="Enquiry" asp-Controller="Home" method="Post">
+        <div class="p-a-1">
+            <div asp-validation-summary="All"></div>
+
+            <div class="form-inline">
+                <div class="form-group">
+                    <table class="table" border="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label asp-for="EnquiryText">Enquiry</label>
+                                    <textarea style="width:500px;height:200px" asp-for="EnquiryText"></textarea>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label asp-for="EmailAddress">Your Email Address </label>
+                                    <input class="form-control" style="width:500px;" asp-for="EmailAddress" />
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            @*<div class="form-group">
+                    <label>Confirmed?</label>
+                    <select class="form-control" style="width:300px;" asp-for="Confirmed">
+                        <option value="">Choose an option</option>
+                        <option value="true">Yes, I am ready to confirm this booking</option>
+                        <option value="false">No, I am not ready to confirm this booking</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Pay now?</label>
+                    <select class="form-control" style="width:300px;"asp-for="Paid">
+                        <option value="">Choose an option</option>
+                        <option value="true">Yes, I would like to pay online now</option>
+                        <option value="false">No, I will pay later</option>
+                    </select>
+                </div>
+
+                <br>
+                <br>*@
+
+        </div>
+
+        <a asp-action="submit">
+            <input type="submit" value="Submit Enquiry" class="btn btn-danger" style="background-color:green;border-radius:50%; border: 1px solid black;" />
+        </a>
+
+    </form>
+</div>
+
+<br />
+<br />
+
+<div>
+    <a asp-action="Index">Home</a>
+</div>
+

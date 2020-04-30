@@ -1,0 +1,145 @@
+﻿@model IEnumerable<Entities.RegisteredUser>
+
+
+
+@{
+    ViewData["Title"] = "Registered Users";
+}
+
+<br />
+<br />
+
+<h1>Registered Users</h1>
+<br />
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Forename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationDate)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Address1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PostCode)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.HomePhone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MobilePhone)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ConfirmPassword)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.Forename, new { @class = "griditemstyle", @readonly = true })
+                </td>
+
+
+                <td>
+                    @Html.TextBoxFor(modelItem => item.Surname, new { @class = "griditemstyle", @readonly = true })
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+
+
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistrationDate)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Address1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostCode)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.HomePhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MobilePhone)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ConfirmPassword)
+                    </td>*@
+                <td>
+
+                    <table class="table">
+                        <tbody class="form-group" style="width:100% !important; text-align: center !important">
+                            <tr>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@item.Id">
+                                        <input type="submit" value="View" class="btn btn-primary" style="background-color:olivedrab;border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">
+                                        <input type="submit" value="Edit" class="btn btn-primary" style="background-color:darkcyan;border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-action="Delete" asp-route-id="@item.Id">
+                                        <input type="submit" value="Delete" class="btn btn-danger" style="background-color:orangered;border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                <td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

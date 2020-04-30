@@ -1,0 +1,171 @@
+﻿@{
+    Layout = "~/Views/Shared/_BookingsLayout.cshtml";
+}
+
+
+@model IEnumerable<Entities.Booking>
+
+<br />
+
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+
+<h1>Bookings</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table-striped" style="font-size:small">
+
+    <thead>
+        <tr>
+            <th style="text-align: center">
+                @Html.DisplayNameFor(model => model.FromDate) &nbsp;&nbsp;&nbsp;
+            </th>
+            <th style="text-align: center">
+                @Html.DisplayNameFor(model => model.ToDate) &nbsp;
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoPeople)&nbsp;
+            </th>
+            <th style="text-align: center">
+                @Html.DisplayNameFor(model => model.Name)&nbsp;
+            </th>
+
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Email)&nbsp;
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)&nbsp;
+                </th>*@
+
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceTotal)&nbsp;
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepositPaidAmount)&nbsp;
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Confirmed)&nbsp;
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepositPaid)&nbsp;
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullyPaid)&nbsp;
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepositDueDate)&nbsp;
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullyPaidDueDate)&nbsp;
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.FromDate) &nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.ToDate)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.NoPeople)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>*@
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.InvoiceTotal)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.DepositPaidAmount)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Confirmed.Value)
+                </td>
+                <td align="center">
+                    @if (item.DepositPaid.HasValue)
+                    {
+                        @Html.DisplayFor(modelItem => item.DepositPaid.Value)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => string.Empty);
+                    }
+                </td>
+                <td align="center">
+                    @if (item.FullyPaid.HasValue)
+                    {
+                        @Html.DisplayFor(modelItem => item.FullyPaid.Value)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => string.Empty);
+                    }
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.DepositDueDate)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.FullyPaidDueDate)
+                </td>
+                <td>
+                    <table class="table">
+                        <tbody class="form-group" style="width:100% !important; background:white; text-align: center !important">
+                            <tr>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@item.Id">
+                                        <input type="submit" value="View" class="btn btn-primary" style="background-color:olivedrab; border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">
+                                        <input type="submit" value="Edit" class="btn btn-primary" style="background-color:darkcyan;border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-action="Delete" asp-route-id="@item.Id">
+                                        <input type="submit" value="Delete" class="btn btn-danger" style="background-color:orangered;border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                <td>
+                                <td>
+                                    <a asp-action="Confirmed" asp-route-id="@item.Id">
+                                        <input type="submit" value="Confirm" class="btn btn-danger" style="background-color:green;border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                <td>
+                                <td>
+                                    <a asp-action="DepositPaid" asp-route-id="@item.Id">
+                                        <input type="submit" value="Deposit Paid" class="btn btn-danger" style="background-color:lightblue;border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                <td>
+                                <td>
+                                    <a asp-action="FullyPaid" asp-route-id="@item.Id">
+                                        <input type="submit" value="Fully Paid" class="btn btn-danger" style="background-color:blue;border-radius:50%; border: 1px solid black;display:inline-block !important" />
+                                    </a>
+                                <td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

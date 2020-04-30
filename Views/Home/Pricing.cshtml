@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "Pricing";
+}
+
+<br>
+
+<h1>@ViewData["Title"]</h1>
+<br>
+<h2>@ViewData["Message"]</h2>
+<br>
+
+<style>
+    table {
+        border: 2px solid black;
+    }
+
+    .ralign {
+        text-align: center;
+    }
+</style>
+
+<script>
+    function doScript() {
+
+        var doc = document.getElementById('brdh');
+
+        for (i = 1; i <= 10; i++) {
+            sleep(1000);
+            doc.value = "hello " + i;
+        }
+    }
+
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds) {
+                break;
+            }
+        }
+    }
+</script>
+
+<style>
+    table#table_id tr:nth-child(even) {
+        background-color: palegreen;
+    }
+    table#table_id tr:nth-child(odd) {
+        background-color: white;
+    }
+    table#table_id {
+        border-color:green;
+        border-width:medium;
+
+    }
+</style>
+<table id="table_id" class="table-bordered table-striped">
+    <tr>
+        <th style="width:250px; color:green" > Season</th >
+        <th style="width:500px; color:green" > Dates (minimum booking is 3 days)</th >
+        <th class="ralign" style="width:250px; color:green" > Price per Week in Euros sterling, for day rates simply divide by 7</th >
+    </tr>
+    <tr>
+        <td>Peak Season</td>
+        <td>1st July to 31st August</td>
+        <td class="ralign">750</td>
+    </tr>
+    <tr>
+        <td>High Season</td>
+        <td>May 25th to June 30th</td>
+        <td class="ralign">500</td>
+    </tr>
+    <tr>
+        <td>Off-Peak Season</td>
+        <td>Good Friday to May 25th, September 1st to October 31st</td>
+        <td class="ralign">350</td>
+    </tr>
+    <tr>
+        <td>Low Season</td>
+        <td id="tdi">November to Maunday Thursday</td>
+        <td class="ralign">250</td>
+    </tr>
+</table>
+
+<br />
+<br />
+<br />
+To your bill will be added €8.25 per adult Tourist Tax, a €15 Service charge and a €50 cleaning charge.
+<br />
+<br />
+
+
+@*<div>
+        <label>BRDH Text</label>
+        <input id="brdh" width="100" />
+
+    </div>
+
+
+    <script>doScript()</script>*@
+
+
+@*<div>
+        <label class="BRDHText_LBL">BRDH Text</label>
+        <input id="brdh2" width="100" />
+
+    </div>*@
+
+
+
+<br />
+<p>Price includes WIFI, all linen but excludes gas (lpg), electricity and logs</p>
+
+

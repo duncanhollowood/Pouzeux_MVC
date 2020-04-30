@@ -1,0 +1,90 @@
+﻿@model Entities.Booking
+
+@{
+    ViewData["Title"] = "Thanks";
+    var Message = ViewData["message"];
+}
+
+<br />
+
+
+<h1>@Message - thanks!</h1>
+<br />
+<hr />
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FromDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FromDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ToDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ToDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NoPeople)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NoPeople)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Confirmed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Confirmed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DepositPaid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepositPaid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DepositPaidAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepositPaidAmount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FullyPaid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FullyPaid)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

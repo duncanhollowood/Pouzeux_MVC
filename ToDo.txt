@@ -1,0 +1,11 @@
+﻿Accommodation Page - words and Jpegs of layouts
+Surrounding Area - Treban, Cressanges, Moulin, St P, Souvigny - pics?
+Gallery - the Area??
+Pricing in Euros, Pricing calca - data driven from model (+ui?)
+Auth vs Non-Auth use - required or not?
+review all pics
+privacy page
+EF update/renew with data save?
+hosting!
+hide credentials from code
+Mail formats/graphics - all
