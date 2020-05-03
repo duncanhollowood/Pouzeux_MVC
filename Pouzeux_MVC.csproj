@@ -6,6 +6,12 @@
     <UserSecretsId>fb9929f4-10e0-4363-9a62-4a6323560afe</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="wwwroot\images\SUMMER 2019\TheArea\**" />
+    <Content Remove="wwwroot\images\SUMMER 2019\TheArea\**" />
+    <EmbeddedResource Remove="wwwroot\images\SUMMER 2019\TheArea\**" />
+    <None Remove="wwwroot\images\SUMMER 2019\TheArea\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Remove="Views\Home\Outside.cshtml" />
     <Content Remove="Views\Home\TheHouse.cshtml" />
   </ItemGroup>
@@ -26,7 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\SUMMER 2019\Downstairs\" />
-    <Folder Include="wwwroot\images\SUMMER 2019\TheArea\" />
     <Folder Include="wwwroot\images\SUMMER 2019\Upstairs\" />
   </ItemGroup>
   <ItemGroup>

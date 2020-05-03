@@ -131,13 +131,13 @@ namespace Pouzeux_MVC.Controllers
         {
             ViewData["Message"] = "Photos - Downstairs";
 
-            return View("Photos", GetImages("Summer 2019\\Downstairs"));
+            return View("Index", GetImages("Summer 2019\\Downstairs"));
         }
         public IActionResult Upstairs()
         {
             ViewData["Message"] = "Photos - Upstairs";
 
-            return View("Photos", GetImages("Summer 2019\\Upstairs"));
+            return View("Index", GetImages("Summer 2019\\Upstairs"));
         }
         public IActionResult All()
         {

@@ -4,7 +4,7 @@
     ViewData["Title"] = "Booking Form";
 }
 
-<h1>Pricing</h1>
+<h1>Request for a new booking</h1>
 
 
 <style>
@@ -17,26 +17,6 @@
     }
 </style>
 
-<script>
-    function doScript() {
-
-        var doc = document.getElementById('brdh');
-
-        for (i = 1; i <= 10; i++) {
-            sleep(1000);
-            doc.value = "hello " + i;
-        }
-    }
-
-    function sleep(milliseconds) {
-        var start = new Date().getTime();
-        for (var i = 0; i < 1e7; i++) {
-            if ((new Date().getTime() - start) > milliseconds) {
-                break;
-            }
-        }
-    }
-</script>
 
 <style>
     table#table_id tr:nth-child(even) {
@@ -84,11 +64,6 @@
 To your bill will be added €8.25 per adult Tourist Tax, a €15 Service charge and a €50 cleaning charge.
 <br />
 <br />
-
-
-
-
-<h1>Request for a new booking</h1>
 
 <div class="panel panel-success">
     <br />
@@ -204,3 +179,23 @@ To your bill will be added €8.25 per adult Tourist Tax, a €15 Service charge
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 
+<script>
+    function doScript() {
+
+        var doc = document.getElementById('brdh');
+
+        for (i = 1; i <= 10; i++) {
+            sleep(1000);
+            doc.value = "hello " + i;
+        }
+    }
+
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds) {
+                break;
+            }
+        }
+    }
+</script>
