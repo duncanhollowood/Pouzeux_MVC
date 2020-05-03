@@ -1,6 +1,7 @@
 ﻿using LoggerService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Repository;
@@ -43,22 +44,19 @@ namespace Pouzeux_MVC.Extensions
 
             // dotnet user-secrets list to see what is set 
 
+            // Microsoft SQL
             var builder = new SqlConnectionStringBuilder(config["MSSQLConnectionString:connectionString"]);
             builder.Password = config["password"];
-            
             _connection = builder.ConnectionString;
-            
-            // var MYSQLconnectionString = config["MYSQLConnectionString:connectionString"];
-            //services.AddDbContext<RepositoryContext>(o => o.UseMySql(MYSQLconnectionString));
-
-            // var SQLServer = new SqlConnectionStringBuilder(_connection).DataSource;
-
-
-            //services.AddDbContext<BM_OCR_DbContext>(options => { options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), sqlServer => sqlServer.MigrationsAssembly("BM.OCR.Server"));});
-
             services.AddDbContext<RepositoryContext>(o => { o.UseSqlServer(_connection, sqlServer => sqlServer.MigrationsAssembly("Entities"));});
+
+            // MYSQL
+            var MYSQLconnectionString = config["MYSQLConnectionString:connectionString"];
+            //services.AddDbContext<RepositoryContext>(o => o.UseMySql(MYSQLconnectionString));
+            // services.AddDbContext<RepositoryContext>(o => o.UseMySql(MYSQLconnectionString, sqlServer => sqlServer.MigrationsAssembly("Entities")));
+
         }
-            
+
 
         public static void ConfigureRepositoryWrapper(this IServiceCollection services)
         {

@@ -4,9 +4,9 @@
     ViewData["Title"] = "Booking Form";
 }
 
+    <h1>Request for a new booking</h1>
+
     <div class="panel panel-success">
-        <br />
-        <div class="panel-heading text-center"><h1>Request for a new booking</h1></div>
         <br />
         <br />
         Booking Requests are sent by email, you will receive a response within 24 hours.
@@ -105,7 +105,9 @@
             <br>
 
             <a asp-action="Apply">
-                <input type="submit" value="Apply" class="btn btn-danger" style="background-color:green;border-radius:50%; border: 1px solid black;" />
+                <div>
+                    <input type="button" value="Request booking" class="btn btn-success" />
+                </div>
             </a>
 
             <br>

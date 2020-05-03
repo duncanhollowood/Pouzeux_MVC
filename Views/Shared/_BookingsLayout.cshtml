@@ -8,8 +8,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/duncans.css" />
+        <link rel="stylesheet" href="~/css/Site.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -23,7 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white navbar-inverse navbar-fixed-top border-bottom box-shadow mb-3">
                 <div class="container-fluid">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pouzeux Home</a>
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pouzeux</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -33,7 +32,7 @@
                             <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Accommodation">Accommodation</a></li>
                             <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Photos">Gallery</a></li>
                             <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Facilities">Facilities</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TheArea">Surrounding Area</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TheArea">Activities</a></li>
                             <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Enquiry">Enquiry</a></li>
                             <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Bookings" asp-action="Booking">Booking</a></li>
@@ -69,7 +68,7 @@
                     </div>
                 </div>
             </nav>
-</header>
+    </header>
 
     <div class="container-fluid" >
         @*<partial name="_CookieConsentPartial" />*@
