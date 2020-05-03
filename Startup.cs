@@ -110,14 +110,12 @@ namespace Pouzeux_MVC
         }
         private static void UpdateDatabase(IApplicationBuilder app)
         {
-            using (var serviceScope = app.ApplicationServices
+            using var serviceScope = app.ApplicationServices
                 .GetRequiredService<IServiceScopeFactory>()
-                .CreateScope())
+                .CreateScope();
+            using (var context = serviceScope.ServiceProvider.GetService<RepositoryContext>())
             {
-                using (var context = serviceScope.ServiceProvider.GetService<RepositoryContext>())
-                {
-                    context.Database.Migrate();
-                }
+                context.Database.Migrate();
             }
         }
     }

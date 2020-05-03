@@ -47,6 +47,12 @@ namespace Pouzeux_MVC.Controllers
         }
 
         [HttpGet]
+        public IActionResult Garden()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
@@ -86,7 +92,7 @@ namespace Pouzeux_MVC.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(GetImages("Summer 2019"));
         }
 
         public IActionResult About()

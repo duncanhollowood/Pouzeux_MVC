@@ -29,25 +29,26 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-        
+
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Accommodation">Accommodation</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Photos">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Facilities">Facilities</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TheArea">Activities</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Enquiry">Enquiry</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Bookings" asp-action="Booking">Booking</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Accommodation">House</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Garden">Garden</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TheArea">Local Area</a></li>
+                        @*<li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a></li>*@
+                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Bookings" asp-action="Booking">Book</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Enquiry">Contact</a></li>
+                        @*<li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Photos">Gallery</a></li>*@
+                        @*<li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Facilities">Facilities</a></li>*@
+                        <li class="nav-item"><a class="nav-link text-dark font-italic font-weight-light" asp-area="" asp-controller="Home" asp-action="Login">Login</a></li>
                         @{
                             bool isAdminLoggedIn = (getrole() == "Admin");
                         }
 
                         @{ if (isAdminLoggedIn)
                             {
-                                <li class="nav-item"><a class="nav-link text-dark" asp-area="Bookings" asp-controller="Bookings" asp-action="Index">Bookings</a></li>
-                                <li class="nav-item"><a class="nav-link text-dark" asp-area="Bookings" asp-controller="RegisteredUsers" asp-action="Index">Registered Users</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark font-italic font-weight-light" asp-area="Bookings" asp-controller="Bookings" asp-action="Index">Bookings</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark font-italic font-weight-light" asp-area="Bookings" asp-controller="RegisteredUsers" asp-action="Index">Registered Users</a></li>
                             }
                         }
 
@@ -56,20 +57,20 @@
             </div>
         </nav>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white fixed-bottom pre-scrollable">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white pre-scrollable">
             <div class="container">
                 @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Gite en Allier</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>*@
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    </ul>
-                </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>*@
+                @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            </ul>
+        </div>*@
             </div>
         </nav>
     </header>
@@ -82,11 +83,20 @@
         @*</main>*@
     </div>
 
-    @*<footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2019 - Pouzeux_MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy 2</a>
-            </div>
-        </footer>*@
+    <footer class="footer text-muted">
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white navbar-inverse navbar-fixed-top border-bottom box-shadow mb-3">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-direction:row">
+                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </footer>
 
     @{
         string getrole()

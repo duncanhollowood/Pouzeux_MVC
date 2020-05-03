@@ -27,7 +27,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\SUMMER 2019\Downstairs\" />
     <Folder Include="wwwroot\images\SUMMER 2019\TheArea\" />
-    <Folder Include="wwwroot\images\SUMMER 2019\Outside\" />
     <Folder Include="wwwroot\images\SUMMER 2019\Upstairs\" />
   </ItemGroup>
   <ItemGroup>

@@ -4,131 +4,203 @@
     ViewData["Title"] = "Booking Form";
 }
 
-    <h1>Request for a new booking</h1>
+<h1>Pricing</h1>
 
-    <div class="panel panel-success">
-        <br />
-        <br />
-        Booking Requests are sent by email, you will receive a response within 24 hours.
-        <br />
-        <br />
-        <form class="panel-body" asp-controller="Bookings" asp-action="Booking" method="post">
-            @*<div class="p-a-1">*@
-            <div asp-validation-summary="All"></div>
 
-            <div class="formfield">
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label asp-for="FromDate">From Date</label>
-                        <input class="form-control" asp-for="FromDate" />
-                    </div>
+<style>
+    table {
+        border: 2px solid black;
+    }
+
+    .ralign {
+        text-align: center;
+    }
+</style>
+
+<script>
+    function doScript() {
+
+        var doc = document.getElementById('brdh');
+
+        for (i = 1; i <= 10; i++) {
+            sleep(1000);
+            doc.value = "hello " + i;
+        }
+    }
+
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds) {
+                break;
+            }
+        }
+    }
+</script>
+
+<style>
+    table#table_id tr:nth-child(even) {
+        background-color: #C6DABF;
+    }
+
+    table#table_id tr:nth-child(odd) {
+        background-color: white;
+    }
+
+    table#table_id {
+        border-color: #006A4E;
+        border-width: medium;
+    }
+</style>
+<table id="table_id" class="table-bordered table-striped">
+    <tr>
+        <th style="width:250px; color:#006A4E"> Season</th>
+        <th style="width:500px; color:#006A4E"> Dates (minimum booking is 3 days)</th>
+        <th class="ralign" style="width:250px; color:#006A4E"> Price per Week in Euros sterling, for day rates simply divide by 7</th>
+    </tr>
+    <tr>
+        <td>Peak Season</td>
+        <td>1st July to 31st August</td>
+        <td class="ralign">750</td>
+    </tr>
+    <tr>
+        <td>High Season</td>
+        <td>May 25th to June 30th</td>
+        <td class="ralign">500</td>
+    </tr>
+    <tr>
+        <td>Off-Peak Season</td>
+        <td>Good Friday to May 25th, September 1st to October 31st</td>
+        <td class="ralign">350</td>
+    </tr>
+    <tr>
+        <td>Low Season</td>
+        <td id="tdi">November to Maunday Thursday</td>
+        <td class="ralign">250</td>
+    </tr>
+</table>
+
+<br />
+To your bill will be added €8.25 per adult Tourist Tax, a €15 Service charge and a €50 cleaning charge.
+<br />
+<br />
+
+
+
+
+<h1>Request for a new booking</h1>
+
+<div class="panel panel-success">
+    <br />
+    <br />
+    Booking Requests are sent by email, you will receive a response within 24 hours.
+    <br />
+    <br />
+    <form class="panel-body" asp-controller="Bookings" asp-action="Booking" method="post">
+        @*<div class="p-a-1">*@
+        <div asp-validation-summary="All"></div>
+
+        <div class="formfield">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label asp-for="FromDate">From Date</label>
+                    <input class="form-control" asp-for="FromDate" />
                 </div>
             </div>
-
-            <br />
-
-            <div class="formfield">
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label asp-for="ToDate">To Date</label>
-                        <input class="form-control" asp-for="ToDate" />
-                    </div>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="formfield">
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label asp-for="NoPeople">No People</label>
-                        <input class="form-control" style="width:75px;" asp-for="NoPeople" />
-                    </div>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="formfield">
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label asp-for="Name">Name</label>
-                        <input class="form-control" style="width:200px;" asp-for="Name" />
-                    </div>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="formfield">
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label asp-for="Email">Email</label>
-                        <input class="form-control" style="width:300px;" asp-for="Email" />
-                    </div>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="formfield">
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label asp-for="Phone">Phone</label>
-                        <input class="form-control" style="width:200px;" asp-for="Phone" />
-                    </div>
-                </div>
-            </div>
-
-            @*<div class="form-group">
-            <label>Confirmed?</label>
-            <select class="form-control" style="width:300px;" asp-for="Confirmed">
-                <option value="">Choose an option</option>
-                <option value="true">Yes, I am ready to confirm this booking</option>
-                <option value="false">No, I am not ready to confirm this booking</option>
-            </select>
         </div>
-        <br>
-        <div class="form-group">
-            <label>Pay now?</label>
-            <select class="form-control" style="width:300px;"asp-for="Paid">
-                <option value="">Choose an option</option>
-                <option value="true">Yes, I would like to pay online now</option>
-                <option value="false">No, I will pay later</option>
-            </select>
+
+        <br />
+
+        <div class="formfield">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label asp-for="ToDate">To Date</label>
+                    <input class="form-control" asp-for="ToDate" />
+                </div>
+            </div>
         </div>
 
-        <br>
-        <br>*@
+        <br />
 
-            <br>
-            <br>
-
-            <a asp-action="Apply">
-                <div>
-                    <input type="button" value="Request booking" class="btn btn-success" />
+        <div class="formfield">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label asp-for="NoPeople">No People</label>
+                    <input class="form-control" style="width:75px;" asp-for="NoPeople" />
                 </div>
-            </a>
-
-            <br>
-            <br>
-
-            <div>
-                <a asp-action="Home">Home</a>
             </div>
+        </div>
 
-            <br>
-            <br>
+        <br />
 
-            @*<b>
+        <div class="formfield">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input class="form-control" style="width:200px;" asp-for="Name" />
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="formfield">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input class="form-control" style="width:300px;" asp-for="Email" />
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="formfield">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label asp-for="Phone">Phone</label>
+                    <input class="form-control" style="width:200px;" asp-for="Phone" />
+                </div>
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                <label>Confirmed?</label>
+                <select class="form-control" style="width:300px;" asp-for="Confirmed">
+                    <option value="">Choose an option</option>
+                    <option value="true">Yes, I am ready to confirm this booking</option>
+                    <option value="false">No, I am not ready to confirm this booking</option>
+                </select>
+            </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Apply" class="btn btn-default" />
+                <label>Pay now?</label>
+                <select class="form-control" style="width:300px;"asp-for="Paid">
+                    <option value="">Choose an option</option>
+                    <option value="true">Yes, I would like to pay online now</option>
+                    <option value="false">No, I will pay later</option>
+                </select>
             </div>
-        </b>*@
+
+            <br>
+            <br>*@
+
+        <br>
+        <br>
 
 
 
-        </form>
-    </div>
+        <a asp-action="Apply">
+            <input type="submit" value="Apply" class="btn btn-success" />
+        </a>
 
+
+
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 

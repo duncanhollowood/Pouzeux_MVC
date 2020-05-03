@@ -6,11 +6,11 @@ for details on configuring this project to bundle and minify static web assets. 
     border-radius: 12px !important;
 }
 
-.btn-success:hover {
+    .btn-success:hover {
         color: white !important;
         background-color: #006A4E !important;
         border-color: #006A4E !important;
-}
+    }
 
 .btn-danger:hover {
     color: white;
@@ -31,12 +31,12 @@ for details on configuring this project to bundle and minify static web assets. 
     border-color: darkred;
 }
 
-/*.formfield label {
+.formfield label {
     padding-right: 10px;
-    width: 15%; 
-    min-width: 120px; 
+    width: 15%;
+    min-width: 120px;
     justify-content: left;
-}*/
+}
 
 
 h1, .h1 {
@@ -57,16 +57,29 @@ h3, .h3 {
     font-family: Adamina;
 }
 
+h3link, .h3link {
+    color: #750D37 !important;
+    font-family: Adamina;
+}
+
+    .h3link:hover {
+        color: blue !important;
+        text-decoration: underline;
+        
+    }
+
+
 text {
-    color: #006A4E !important;
+    color: black !important;
     margin-bottom: 40px; /* Margin bottom by footer height */
     font-size: 18px;
+    font-family: Roboto;
 }
 
 body {
-    color: #006A4E !important;
+    color: black !important;
     margin-bottom: 40px; /* Margin bottom by footer height */
-    font-size: 40px !important;
+    font-size: 18px !important;
     font-family: Roboto;
 }
 
@@ -83,6 +96,7 @@ body {
         color: #750D37 !important;
         font-weight: bold;
         font-size: 24px;
+        font-family:Adamina;
     }
 
     .navbar .navbar-nav {
