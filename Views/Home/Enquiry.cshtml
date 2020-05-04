@@ -5,13 +5,13 @@
 }
 
 
-    <h1>General Enquiry</h1>
+    <h1>Contact us</h1>
 <br />
 
 <div class="panel panel-success">
     <br />
     <br />
-    Please submit your query here: you will receive a response within 24 hours.
+    Any questions? Please get in touch using the form below and we will try to respond within 24 hours.
     <br />
     <br />
     <form class="panel-body" asp-action="Enquiry" asp-Controller="Home" method="Post">
@@ -30,7 +30,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <label asp-for="EmailAddress">Your Email Address </label>
+                                    <label asp-for="EmailAddress">Your email address </label>
                                     <input class="form-control" style="width:500px;" asp-for="EmailAddress" />
                                 </th>
                             </tr>
@@ -66,7 +66,7 @@
         </div>
 
         <a asp-action="submit">
-            <input type="submit" value="Submit Enquiry" class="btn btn-success" />
+            <input type="submit" value="Send" class="btn btn-success" />
         </a>
 
     </form>
@@ -74,5 +74,3 @@
 
 <br />
 <br />
-
-
