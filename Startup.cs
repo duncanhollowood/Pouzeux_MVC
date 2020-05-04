@@ -113,10 +113,8 @@ namespace Pouzeux_MVC
             using var serviceScope = app.ApplicationServices
                 .GetRequiredService<IServiceScopeFactory>()
                 .CreateScope();
-            using (var context = serviceScope.ServiceProvider.GetService<RepositoryContext>())
-            {
-                context.Database.Migrate();
-            }
+            using var context = serviceScope.ServiceProvider.GetService<RepositoryContext>();
+            context.Database.Migrate();
         }
     }
 }

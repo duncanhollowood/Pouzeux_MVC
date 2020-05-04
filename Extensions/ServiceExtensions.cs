@@ -45,13 +45,17 @@ namespace Pouzeux_MVC.Extensions
             // dotnet user-secrets list to see what is set 
 
             // Microsoft SQL
-            var builder = new SqlConnectionStringBuilder(config["MSSQLConnectionString:connectionString"]);
-            builder.Password = config["password"];
+            var builder = new SqlConnectionStringBuilder(config["MSSQLConnectionString:connectionString"])
+            {
+                Password = config["password"]
+            };
             _connection = builder.ConnectionString;
             services.AddDbContext<RepositoryContext>(o => { o.UseSqlServer(_connection, sqlServer => sqlServer.MigrationsAssembly("Entities"));});
 
             // MYSQL
             var MYSQLconnectionString = config["MYSQLConnectionString:connectionString"];
+
+            MYSQLconnectionString = "Data Source=BRDH-UKEF-DELL;Initial Catalog=Pouzeux;User ID=root;Password=brinjal";
             //services.AddDbContext<RepositoryContext>(o => o.UseMySql(MYSQLconnectionString));
             // services.AddDbContext<RepositoryContext>(o => o.UseMySql(MYSQLconnectionString, sqlServer => sqlServer.MigrationsAssembly("Entities")));
 

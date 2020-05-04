@@ -1,6 +1,23 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.carousel-control {
+    width: 4%   
+}
+
+.img:hover {
+    color: #424242;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    /*-ms-transition: all .3s ease-in;*/
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+    opacity: 1;
+    transform: scale(2,2);
+    -ms-transform: scale(2,2); /* IE 9 */
+    -webkit-transform: scale(2,2); /* Safari and Chrome */
+}
+
 .btn-success, .btn-danger {
     transition-duration: 0.4s !important;
     border-radius: 12px !important;
