@@ -1,3 +1,3 @@
 # README
 
-We can put some info about the files & folder structure here
+This is the code & database for Pouzeux website
